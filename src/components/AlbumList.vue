@@ -1,37 +1,43 @@
 <template>
-  <div class="row">
+  <div>
+    <div v-if="loaded" class="row">
     <Album 
     v-for="album in albums"
     :key="album.id"
-    :album="album"
-
+    :album="album" 
     />
-    
+    </div>
+    <Loader v-else/>
   </div>
+  
 </template>
 
 <script>
 import axios from 'axios';
 import Album from './Album.vue';
+import Loader from './Loader.vue';
 
 export default {
   name:'AlbumList',
   components:{
-    Album
+    Album,
+    Loader
   },
   data(){
     return{
-      albums:[]
+      albums:[],
+      loaded: false
     }
   },
   methods:{
     getApi(){
-      //faccio la chiamata API
+      //chiamata API
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
        .then(response  => {
          console.log('response',response);
          this.albums = response.data.response;
          console.log('albums',this.albums);
+         this.loaded = true;
        })
        .catch(error => {
          console.log(error);
