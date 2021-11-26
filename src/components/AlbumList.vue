@@ -3,6 +3,7 @@
     <Album 
     v-for="album in albums"
     :key="album.id"
+    :album="album"
 
     />
     
@@ -28,9 +29,9 @@ export default {
       //faccio la chiamata API
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
        .then(response  => {
-         console.log(''response);
-         this.albums = response.data;
-         console.log('array',this.albums);
+         console.log('response',response);
+         this.albums = response.data.response;
+         console.log('albums',this.albums);
        })
        .catch(error => {
          console.log(error);
