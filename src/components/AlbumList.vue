@@ -1,15 +1,11 @@
 <template>
   <div class="row">
-    <Album />
-    <Album />
-    <Album />
-    <Album />
-    <Album />
-    <Album />
-    <Album />
-    <Album />
-    <Album />
-    <Album />
+    <Album 
+    v-for="album in albums"
+    :key="album.id"
+    
+    />
+    
   </div>
 </template>
 
@@ -22,12 +18,18 @@ export default {
   components:{
     Album
   },
+  data(){
+    return{
+      albums:[]
+    }
+  },
   methods:{
     getApi(){
-      //fa la chiamata 
-      axios.get('https://flynn.boolean.careers/exercises/api/array/music');
-       .then(re  => {
+      //faccio la chiamata API
+      axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+       .then(response  => {
          console.log(response);
+         this.albums = response.data;
        })
        .catch(error => {
          console.log(error);
