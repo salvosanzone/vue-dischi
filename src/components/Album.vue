@@ -20,8 +20,14 @@ export default {
   .col-ss{
     width: calc(100% / 5 - 20px);
     margin: 10px;
-    height: 230px;
+    height: 240px;
+    box-shadow: 0 10px 10px rgba($color: #000000, $alpha: .5);
     background-color: #2E3A46;
+    transition: all 0.3s;
+    &:hover{
+      transform: scale(1.05);
+      cursor: pointer;
+    }
     .title{
       font-size: 15px;
       font-weight: bold;
