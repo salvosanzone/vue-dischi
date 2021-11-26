@@ -24,8 +24,6 @@ export default {
     background-color: #1E2D3B;
     .container{
       width: 60%;
-      height: 500px;
-      border: 1px solid white;
     }
   }
 </style>
