@@ -1,0 +1,12 @@
+//general
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~@fontsource/lato/index.css';
+
+body{
+  font-family: $font;
+  color: white;
+}
+
+img{
+  max-width: 100%;
+}
