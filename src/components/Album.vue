@@ -21,6 +21,7 @@ export default {
     background-color: #2E3A46;
     .title{
       font-size: 15px;
+      font-weight: bold;
       text-transform: uppercase;
     }
     .author,
