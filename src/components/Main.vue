@@ -20,10 +20,16 @@ export default {
 
 <style lang="scss">
   main{
-    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 50px);
     background-color: #1E2D3B;
     .container{
-      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 65%;
     }
   }
 </style>

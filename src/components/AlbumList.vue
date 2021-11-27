@@ -6,7 +6,7 @@
     :key="album.id"
     :album="album" 
     />
-    </div>
+    </div >
     <Loader v-else/>
   </div>
   
@@ -37,7 +37,7 @@ export default {
          console.log('response',response);
          this.albums = response.data.response;
          console.log('albums',this.albums);
-         this.loaded = true;
+         //this.loaded = true;
        })
        .catch(error => {
          console.log(error);
@@ -50,6 +50,10 @@ export default {
 }
 </script>
 
-<style >
- 
+<style lang=scss>
+ .row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 </style>

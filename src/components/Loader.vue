@@ -1,5 +1,5 @@
 <template>
-  <div class=" loader text-center">
+  <div class=" loader">
     <div class="lds-dual-ring"></div>
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss" scoped>
   .loader{
+    text-align: center;
     .lds-dual-ring {
     display: inline-block;
     width: 80px;
