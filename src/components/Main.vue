@@ -19,16 +19,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/style/mixins.scss';
   main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex('center');
     min-height: calc(100vh - 50px);
     background-color: #1E2D3B;
     .container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flex('columb');
       width: 65%;
     }
   }

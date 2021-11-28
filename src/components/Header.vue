@@ -6,14 +6,17 @@
 
 <script>
 export default {
-  name:'Header'
+  name:'Header',
+  
 }
 </script>
 
 <style lang="scss">
+@import '../assets/style/vars.scss';
+
   header{
     height: 50px;
-    background-color: #2E3A46;
+    background-color: $primary-color;
     .logo{
       line-height: 50px;
       margin-left: 10px;

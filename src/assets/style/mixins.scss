@@ -1,0 +1,10 @@
+@mixin flex($type){
+  display: flex;
+  @if$type == 'columb'{
+    justify-content: center;
+    flex-direction: column;
+  }@else if  $type == 'center'{
+    justify-content: center;
+    align-items: center;
+}
+}

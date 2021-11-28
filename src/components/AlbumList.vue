@@ -37,7 +37,7 @@ export default {
          console.log('response',response);
          this.albums = response.data.response;
          console.log('albums',this.albums);
-         //this.loaded = true;
+         this.loaded = true;
        })
        .catch(error => {
          console.log(error);
