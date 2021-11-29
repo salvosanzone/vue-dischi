@@ -6,7 +6,8 @@
 
 <template>
   <select
-    @click="$emit('selectCategory', value)"
+    v-model="genere"
+    @change="$emit('selectCategory', genere)"
   >
     <option value="Rock">Rock</option>
     <option value="Metal">Metal</option>
@@ -18,9 +19,9 @@
 <script>
 export default {
   name: 'Select',
-  date(){
+  data(){
     return {
-      value: 'album.value'
+      genere: ''
     };
   }
 };

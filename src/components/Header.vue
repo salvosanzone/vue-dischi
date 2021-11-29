@@ -1,7 +1,7 @@
 <template>
-  <header @selectCategory="">
+  <header >
     <i class="logo fab fa-spotify"></i>
-    <Select />
+    <!--<Select @selectCategory="miaFunzione" />-->
   </header>
 </template>
 
@@ -9,10 +9,15 @@
 export default {
   name:'Header',
   components:{
-    Select
+    //Select
+  },
+  methods:{
+    /*miaFunzione(value){
+      console.log('miaFunzione', value);
+    }*/
   }
 }
-import Select from './Select.vue';
+//import Select from './Select.vue';
 </script>
 
 <style lang="scss">
