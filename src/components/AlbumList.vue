@@ -2,6 +2,7 @@
   <div>
     <div v-if="loaded" class="row">
     <Album 
+    @selectCategory="perFormSelect"
     v-for="album in albums"
     :key="album.id"
     :album="album" 
@@ -31,6 +32,9 @@ export default {
     }
   },
   methods:{
+    perFormSelect(value){
+
+    },
     getApi(){
       //chiamata API
       axios.get(this.apiUrl)
@@ -43,7 +47,8 @@ export default {
        .catch(error => {
          console.log(error);
        })
-    }
+    },
+    
   },
   mounted(){
     this.getApi()

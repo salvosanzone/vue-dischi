@@ -6,7 +6,7 @@
 
 <template>
   <select
-    @click="$('selectCategory', value)"
+    @click="$emit('selectCategory', value)"
   >
     <option value="Rock">Rock</option>
     <option value="Metal">Metal</option>
@@ -17,8 +17,13 @@
 
 <script>
 export default {
-  name: 'Select'
-}
+  name: 'Select',
+  date(){
+    return {
+      value: 'album.value'
+    };
+  }
+};
 </script>
 
 <style lang="scss">

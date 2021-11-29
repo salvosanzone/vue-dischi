@@ -1,5 +1,5 @@
 <template>
-  <header @selectCategory="value">
+  <header @selectCategory="">
     <i class="logo fab fa-spotify"></i>
     <Select />
   </header>
