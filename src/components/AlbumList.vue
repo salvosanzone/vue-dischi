@@ -26,13 +26,14 @@ export default {
   data(){
     return{
       albums:[],
-      loaded: false
+      loaded: false,
+      apiUrl:'https://flynn.boolean.careers/exercises/api/array/music',
     }
   },
   methods:{
     getApi(){
       //chiamata API
-      axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+      axios.get(this.apiUrl)
        .then(response  => {
          console.log('response',response);
          this.albums = response.data.response;
