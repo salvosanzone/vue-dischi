@@ -60,7 +60,8 @@ export default {
              this.genres.push(album.genre);
            }
          });
-          this.$emit('genresList', this.genres)
+          this.$emit('genresList', this.genres);
+          console.log('Partenza $emit genresList da AlbumList -> Main.vue');
 
          
          this.loaded = true;

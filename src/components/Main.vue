@@ -1,9 +1,9 @@
 <template>
-  <main @genresList="genresToPops"
+  <main 
   class="py-5"
   >
     <div class="container">
-      <AlbumList :selectValue="generateSelected" />
+      <AlbumList @genresList="genresToPops" :selectValue="generateSelected" />
     </div>
   </main>
 </template>
@@ -18,7 +18,6 @@ export default {
     AlbumList
   },
   props:{
-    //genreToSearch = generateSelected
     generateSelected: String
   },
   data(){
@@ -28,8 +27,9 @@ export default {
   },
   methods:{
     genresToPops(genres){
-      this.genresOfMusic = genres
-      this.$emit('genresListOfMusic', this.genresOfMusic)
+      this.genresOfMusic = genres;
+      console.log('Ricevuto evento da AlbumList in Main.vue -> genresToPops', genres);
+      this.$emit('genresListOfMusic', this.genresOfMusic);
     }
   }
 }
