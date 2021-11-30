@@ -1,7 +1,8 @@
 <template>
  <div>
-   <Header @selectGenre="performSelect"/>
-   <Main :generateSelected="genreToSearch" />
+   <Header :genresList="generi" @selectGenre="performSelect"/>
+   <Main :generateSelected="genreToSearch" @genresListOfMusic="listOfGenres"
+   />
  </div>
 </template>
 
@@ -17,7 +18,9 @@ export default {
   },
   data(){
     return{
-      genreToSearch: '' //il parametro che mi arriva dal figlio genere=value lo inserisco all'interno di una variabile in modo tale da salvarlo,alla fine lui lo ritrovo nella props di albumList col nome di selectValue
+      genreToSearch: '', //il parametro che mi arriva dal figlio genere=value lo inserisco all'interno di una variabile in modo tale da salvarlo,alla fine lui lo ritrovo nella props di albumList col nome di selectValue
+
+      generi:[]
     };
   },
   methods: {
@@ -26,6 +29,9 @@ export default {
       console.log('performSelect:',genere);
       this.genreToSearch = genere;
 
+    },
+    listOfGenres(genresOfMusic){
+      this.generi = genresOfMusic;
     }
   },
 }

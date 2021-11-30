@@ -31,7 +31,7 @@ export default {
       albums:[],
       loaded: false,
       apiUrl:'https://flynn.boolean.careers/exercises/api/array/music',
-      
+      genres:[]
     }
   },
   computed: {
@@ -53,9 +53,16 @@ export default {
       //chiamata API
       axios.get(this.apiUrl)
        .then(response  => {
-         console.log('response',response);
          this.albums = response.data.response;
-         console.log('albums',this.albums);
+
+         this.albums.forEach(album => {
+           if(!this.genres.includes(album.genre)){
+             this.genres.push(album.genre);
+           }
+         });
+          this.$emit('genresList', this.genres)
+
+         
          this.loaded = true;
        })
        .catch(error => {

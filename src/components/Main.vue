@@ -1,5 +1,7 @@
 <template>
-  <main class="py-5">
+  <main @genresList="genresToPops"
+  class="py-5"
+  >
     <div class="container">
       <AlbumList :selectValue="generateSelected" />
     </div>
@@ -21,8 +23,14 @@ export default {
   },
   data(){
     return{
-      
-    };
+      genresOfMusic:[]
+    }
+  },
+  methods:{
+    genresToPops(genres){
+      this.genresOfMusic = genres
+      this.$emit('genresListOfMusic', this.genresOfMusic)
+    }
   }
 }
 </script>
