@@ -1,9 +1,9 @@
 <template>
   <div class="col">
-      <img :src="album.poster" :alt="album.title">
-      <h6 class="title">{{album.title}}</h6>
-      <p class="author m-0">{{album.author}}</p>
-      <p class="year m-0">{{album.year}}</p>
+      <img :src="albumData.poster" :alt="albumData.title">
+      <h6 class="title">{{albumData.title}}</h6>
+      <p class="author m-0">{{albumData.author}}</p>
+      <p class="year m-0">{{albumData.year}}</p>
   </div>
 </template>
 
@@ -11,8 +11,8 @@
 export default {
   name:'Album',
   props:{
-    //sul ciclo inseriro questa props
-    album: Object
+    //è figlio di albumList e gli passo l'oggetto tramite la props
+    albumData: Object
   }
 }
 </script>

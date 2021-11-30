@@ -1,11 +1,10 @@
 <template>
   <div>
-    <Select @selectCategory="performSelect"/>
     <div v-if="loaded" class="row">
     <Album 
     v-for="album in filteredAlbums"
     :key="album.id"
-    :album="album" 
+    :albumData="album" 
     />
     </div >
     <Loader v-else/>
@@ -17,42 +16,38 @@
 import axios from 'axios';
 import Album from './Album.vue';
 import Loader from './Loader.vue';
-import Select from './Select.vue';
 
 export default {
   name:'AlbumList',
   components:{
     Album,
     Loader,
-    Select
+  },
+  props:{
+    selectValue: String
   },
   data(){
     return{
       albums:[],
       loaded: false,
       apiUrl:'https://flynn.boolean.careers/exercises/api/array/music',
-      genreToSearch: '' //il parametro che mi arriva dal figlio genere=value lo inserisco all'interno di una variabile
+      
     }
   },
   computed: {
+    //il filter genera un array,filter fa il push dentro l'array di 'album' quando la condizione 'album.genre....' è vera. Dunque filteredAlbums è un array composta solo dal frutto del filtro
+    //selectValue = genreToSearch
     filteredAlbums(){
-      if(this.genreToSearch === ''){
+      if(this.selectValue === ''){
         return this.albums;
       }
       return this.albums.filter( album => {
-        return album.genre.includes(this.genreToSearch);
+        return album.genre === (this.selectValue);
       })
     }
   },
 
   methods:{
-
-    performSelect(value){
-      console.log('performSelect:',value);
-      this.genreToSearch = value;
-
-    },
-
 
     getApi(){
       //chiamata API

@@ -1,7 +1,7 @@
 <template>
   <main class="py-5">
     <div class="container">
-      <AlbumList />
+      <AlbumList :selectValue="generateSelected" />
     </div>
   </main>
 </template>
@@ -14,6 +14,15 @@ export default {
   name: 'Main',
   components: {
     AlbumList
+  },
+  props:{
+    //genreToSearch = generateSelected
+    generateSelected: String
+  },
+  data(){
+    return{
+      
+    };
   }
 }
 </script>
